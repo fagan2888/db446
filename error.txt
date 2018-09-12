@@ -1,0 +1,34 @@
+chanakarn
+ACC\\5942743826'. (18456) (SQLDriverConnect)")
+PS C:\Windows> & C:/ProgramData/Anaconda3/python.exe //milkyway/STDFolderRedirection$/5942743826/Documents/SQL/abc.py
+Traceback (most recent call last):
+  File "//milkyway/STDFolderRedirection$/5942743826/Documents/SQL/abc.py", line 91, in <module>
+    create_table()
+  File "//milkyway/STDFolderRedirection$/5942743826/Documents/SQL/abc.py", line 29, in create_table
+    with pyodbc.connect(con_string) as con:
+pyodbc.Error: ('28000', "[28000] [Microsoft][ODBC Driver 13 for SQL Server][SQL Server]Login failed for user 'ACC\\5942743826'. (18456) (SQLDriverConnect)")
+
+jureerat
+SyntaxError: invalid syntax
+>>> & C:/ProgramData/Anaconda3/python.exe //milkyway/STDFolderRedirection$/5942732926/Documents/demosql/abc.py
+  File "<stdin>", line 1
+    & C:/ProgramData/Anaconda3/python.exe //milkyway/STDFolderRedirection$/5942732926/Documents/demosql/abc.py
+    ^
+SyntaxError: invalid syntax
+>>>
+
+Sirawit
+ File "c:/Users/5942915426/Desktop/pysql/pysql.py", line 91, in <module>
+    create_table()
+  File "c:/Users/5942915426/Desktop/pysql/pysql.py", line 29, in create_table
+    with pyodbc.connect(con_string) as con:
+pyodbc.Error: ('28000', "[28000] [Microsoft][ODBC Driver 13 for SQL Server][SQL Server]Login failed for user 'ACC\\5942915426'. (18456) (SQLDriverConnect)")
+
+PS C:\Users\5942828526\Downloads\a> & python c:/Users/5942828526/Downloads/a/pond.py
+& : The term 'python' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was
+included, verify that the path is correct and try again.
+At line:1 char:3
++ & python c:/Users/5942828526/Downloads/a/pond.py
++   ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (python:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException

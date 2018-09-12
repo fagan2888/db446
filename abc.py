@@ -5,10 +5,9 @@ con_string = ""
 
 def con_win_authen():
     driver = 'ODBC Driver 13 for SQL Server'
-    server = 'prasertvm1'
+    server = '.'
     database = 'demo2016'
-    con_string = f'DRIVER={driver};SERVER={server};DATABASE={database};trusted_connection=yes'
-    return con_string
+    return f'DRIVER={driver};SERVER={server};DATABASE={database};trusted_connection=yes'
 
 def con_sql_authen():
     driver = 'ODBC Driver 13 for SQL Server'
@@ -16,13 +15,9 @@ def con_sql_authen():
     database = 'demo2016'
     uid = 'user'
     pwd = 'password'
-    con_string = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={uid};PWD={pwd}'
-    # print(con_string)
-    return con_string
+    return f'DRIVER={driver};SERVER={server};DATABASE={database};UID={uid};PWD={pwd}'
 
 def create_table():
-
-
     sql = """
         create table Person(
             id int identity(1,1) primary key,
@@ -91,20 +86,20 @@ def delete_demo(params):
 
 if __name__ == '__main__':
     # con_string = "driver=ODBC Driver 13 for SQL Server;server=prasertvm1;database=demo2016;trusted_connection=yes"
-    # con_string = con_win_authen()
-    con_string = con_sql_authen()
+    con_string = con_win_authen()
+    # con_string = con_sql_authen()
     create_table()
-    # insert_demo()
+    #insert_demo()
     # select_demo()
     # select_demo2(['F', 50])
     # insert_demo2(['M', 70, 170])
-    for _ in range(10):
-        g = random.choice('MF')
-        w = random.normalvariate(55, 6)
-        h = random.normalvariate(160, 7)
-        insert_demo2([g, w, h])
+    # for _ in range(10):
+    #     g = random.choice('MF')
+    #     w = random.normalvariate(55, 6)
+    #     h = random.normalvariate(160, 7)
+    #     insert_demo2([g, w, h])
     # update_demo('F')
     # h = float(input("height: "))
     # g = input("M or F: ")
     # delete_demo([h, g])
-    select_demo()
+    # select_demo()
