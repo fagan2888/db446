@@ -20,9 +20,9 @@ def con_sql_authen():
     # print(con_string)
     return con_string
 
-
-
 def create_table():
+
+
     sql = """
         create table Person(
             id int identity(1,1) primary key,

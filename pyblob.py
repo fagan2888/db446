@@ -1,11 +1,19 @@
 import pyodbc # pip install pyodbc
 import os
 
-driver = 'ODBC Driver 13 for SQL Server'
-server = 'prasertvm1'
-database = 'demo2016'
-con_string = f'DRIVER={driver};SERVER={server};DATABASE={database};trusted_connection=yes;'
+def con_win_authen():
+    driver = 'ODBC Driver 13 for SQL Server'
+    server = '.'
+    database = 'demo2016'
+    return f'DRIVER={driver};SERVER={server};DATABASE={database};trusted_connection=yes'
 
+def con_sql_authen():
+    driver = 'ODBC Driver 13 for SQL Server'
+    server = 'p1.acc.chula.ac.th'
+    database = 'demo2016'
+    uid = 'user'
+    pwd = 'password'
+    return f'DRIVER={driver};SERVER={server};DATABASE={database};UID={uid};PWD={pwd}'
 
 def create_table():
     with pyodbc.connect(con_string) as con:
@@ -68,12 +76,13 @@ def insert_files_in_folder(folder, ext_filter):
 
 
 if __name__ == '__main__':
+    con_string = con_win_authen()
     # create_table()
     # insert_data(('Archery', 'png', read_bin(r'images/Archery.png')))
     # insert_data(('sample spreadsheet', 'xlsx', read_bin(r'images/sample.xlsx')))
     # insert_data(('big tablet', 'png', read_bin(r'images/tablet.png')))
     # insert_data(('simple text file', 'txt', read_bin(r'images/demo.txt')))
-    select_data(2)
+    # select_data(2)
     # select_data(2, 'demo.xlsx')
     # select_data(2, 'test1.png')
     # select_data(3, 'test.txt')
