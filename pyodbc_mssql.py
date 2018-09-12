@@ -21,8 +21,6 @@ def con_sql_authen():
     return con_string
 
 def create_table():
-
-
     sql = """
         create table Person(
             id int identity(1,1) primary key,
@@ -91,9 +89,9 @@ def delete_demo(params):
 
 if __name__ == '__main__':
     # con_string = "driver=ODBC Driver 13 for SQL Server;server=prasertvm1;database=demo2016;trusted_connection=yes"
-    # con_string = con_win_authen()
-    con_string = con_sql_authen()
-    create_table()
+    con_string = con_win_authen()
+    # con_string = con_sql_authen()
+    # create_table()
     # insert_demo()
     # select_demo()
     # select_demo2(['F', 50])

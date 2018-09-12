@@ -1,11 +1,13 @@
-import pyodbc # pip install pyodbc
+import pyodbc  # pip install pyodbc
 import os
+
 
 def con_win_authen():
     driver = 'ODBC Driver 13 for SQL Server'
     server = '.'
     database = 'demo2016'
     return f'DRIVER={driver};SERVER={server};DATABASE={database};trusted_connection=yes'
+
 
 def con_sql_authen():
     driver = 'ODBC Driver 13 for SQL Server'
@@ -14,6 +16,7 @@ def con_sql_authen():
     uid = 'user'
     pwd = 'password'
     return f'DRIVER={driver};SERVER={server};DATABASE={database};UID={uid};PWD={pwd}'
+
 
 def create_table():
     with pyodbc.connect(con_string) as con:
@@ -72,7 +75,8 @@ def insert_files_in_folder(folder, ext_filter):
             # print(filename, ext[1:])
             # print(folder, basename)
             print(os.path.join(folder, basename))
-            insert_data((filename, ext[1:], read_bin(os.path.join(folder, basename))))
+            insert_data((filename, ext[1:], read_bin(
+                os.path.join(folder, basename))))
 
 
 if __name__ == '__main__':
